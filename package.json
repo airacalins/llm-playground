@@ -1,0 +1,29 @@
+{
+  "name": "ai",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/airacalins/llm-playground#readme",
+  "bugs": {
+    "url": "https://github.com/airacalins/llm-playground/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airacalins/llm-playground.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx watch src/index.ts"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.2",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3"
+  }
+}
