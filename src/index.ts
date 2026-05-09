@@ -1,4 +1,3 @@
-// import { loadEnv } from "./env";
 import { loadEnv } from "./config/env";
 import { generateText } from "./provider";
 
