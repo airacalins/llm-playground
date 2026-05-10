@@ -6,6 +6,7 @@ import { generateStructuredSummary } from "../services/structured-summary.ts";
 
 loadEnv();
 
+const PORT = process.env.PORT || 3001;
 const app = express();
 
 app.use(
@@ -35,8 +36,6 @@ app.post("/ask", async (req, res) => {
     return res.status(500).json({ error: "Internal server error" });
   }
 });
-
-const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
