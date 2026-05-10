@@ -1,5 +1,5 @@
 import { loadEnv } from "./config/env";
-import { generateText } from "./provider";
+import { generateText } from "./providers/groq";
 
 async function main() {
   loadEnv();
