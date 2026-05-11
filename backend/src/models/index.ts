@@ -13,7 +13,7 @@ export function createChatModel(): CreateChatModelResult {
 
   const model = new ChatGroq({
     temperature: 0,
-    model: "llama-3.3-70b-versatile",
+    model: "llama-3.1-8b-instant",
   });
 
   return {

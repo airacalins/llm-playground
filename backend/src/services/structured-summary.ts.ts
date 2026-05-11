@@ -2,7 +2,7 @@ import { createChatModel } from "../models";
 import { ChatResponse, ChatResponseSchema } from "../schema/chat";
 
 export async function generateStructuredSummary(
-  query: string,
+  prompt: string,
 ): Promise<ChatResponse> {
   const { model } = createChatModel();
 
@@ -11,7 +11,7 @@ export async function generateStructuredSummary(
 
   const user = `
     Summarize for a beginner:
-    "${query}"
+    "${prompt}"
     Return:
     - summary (short paragraph)
     - confidence (1-100)

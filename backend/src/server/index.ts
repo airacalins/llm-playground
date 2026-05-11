@@ -11,7 +11,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: "*",
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: false,
@@ -20,15 +20,19 @@ app.use(
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
 app.post("/ask", async (req, res) => {
   try {
-    const query = req.body?.query;
+    const prompt = req.body?.prompt;
 
-    if (!query || !String(query).trim()) {
-      return res.status(400).json({ error: "Invalid query" });
+    if (!prompt || !String(prompt).trim()) {
+      return res.status(400).json({ error: "Invalid prompt" });
     }
 
-    const structuredSummary = await generateStructuredSummary(query);
+    const structuredSummary = await generateStructuredSummary(prompt);
 
     return res.status(200).json(structuredSummary);
   } catch (error) {
